@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Tracker</title>
+</head>
+
+<body>
+    <h1>Grocery Tracker</h1>
+    <label for="item1">Enter Item-1 Amount: </label>
+    <input type="number" id="item1"><br><br>
+
+    <label for="item2">Enter Item-2 Amount: </label>
+    <input type="number" id="item2"><br><br>
+
+    <label for="item3">Enter Item-3 Amount: </label>
+    <input type="number" id="item3"><br><br>
+
+    <button onclick="calculateTotalAmount()">Calculate Total Amount</button><br><br>
+
+    <p id="result"></p>
+    <script>
+
+//  initialization
+
+        let amount1
+        let amount2
+        let amount3
+
+//  take values from html elements where user has entered and calculate sum
+
+        function calculateTotalAmount() {
+            amount1 = parseFloat(document.getElementById("item1").value)
+            amount2 = parseFloat(document.getElementById("item2").value)
+            amount3 = parseFloat(document.getElementById('item3').value)
+
+            let totalAmount = amount1 + amount2 + amount3
+            document.getElementById("result").innerText = "Your Total Bill: " + totalAmount
+        }
+
+    </script>
+</body>
+
+</html>

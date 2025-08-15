@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback</title>
+</head>
+
+<body>
+
+
+  <!--  html form is here -->
+
+
+
+  <h1>Welcome To Products Feedback</h1>
+  <h2>Provide Your Feedback</h2>
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" placeholder="Your Name" required><br>
+  <label for="age">Age:</label><br>
+  <input type="number" id="age" placeholder="Your Age" required><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" placeholder="Your Email" required><br>
+  <label for="job">Job:</label><br>
+  <input type="text" id="job" placeholder="Your Job" required><br>
+  <label for="designation">Designation:</label><br>
+  <input type="text" id="designation" placeholder="Your Designation" required><br>
+  <label for="productType">Product Type:</label><br>
+  <select id="productType" required>
+    <option value="perfume">Perfume</option>
+    <option value="cream">Cream</option>
+    <option value="oils">Oils</option>
+  </select><br>
+  <label for="feedbackText">Feedback:</label><br>
+  <textarea id="feedbackText" rows="5" cols="30" placeholder="Enter your feedback here" required></textarea><br>
+  <button id="submitBtn">Submit Feedback</button>
+  <hr>
+  <div id="userInfo" style="display: none;">
+    <h2>User Information:</h2>
+    <p>Name: <span id="userName"></span></p>
+    <p>Age: <span id="userAge"></span></p>
+    <p>Email: <span id="userEmail"></span></p>
+    <p>Job: <span id="userJob"></span></p>
+    <p>Designation: <span id="userDesignation"></span></p>
+    <p>Feedback for <span id="userProductChoice"></span>: <span id="userFeedback"></span></p>
+  </div>
+
+
+
+  <!--  html form ends here  -->
+
+
+
+  <script>
+
+    //  this function takes values from input from user and then display it down
+
+
+    function submitFeedback() {
+
+      const username = document.getElementById("name").value
+      const age = document.getElementById("age").value
+      const email = document.getElementById("email").value
+      const job = document.getElementById('job').value;
+      const designation = document.getElementById('designation').value;
+      const productType = document.getElementById('productType').value;
+      const feedback = document.getElementById('feedbackText').value;
+
+
+
+      pop()
+
+      document.getElementById("userName").innerHTML = username
+      document.getElementById("userAge").innerHTML = age
+      document.getElementById("userEmail").innerHTML = email
+      document.getElementById("userJob").innerHTML = job
+      document.getElementById("userDesignation").innerHTML = designation
+      document.getElementById("userProductChoice").innerHTML = productType
+      document.getElementById("userFeedback").innerHTML = feedback
+
+      document.getElementById("userInfo").style.display = "block"
+
+    }
+
+    //  event to submit form on clicking button
+
+    const submitButton = document.getElementById("submitBtn")
+
+    submitButton.onclick = submitFeedback
+
+    //  event to submit form on hitting enter   
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter') {
+        submitFeedback();
+      }
+    });
+
+    //  alert pop up box
+
+    function pop() {
+
+      alert("Feedback has been submitted!")
+
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>

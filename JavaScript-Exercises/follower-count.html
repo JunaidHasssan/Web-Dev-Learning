@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Followers Counter</title>
+</head>
+
+<body>
+    <h1>Interactive Counter</h1>
+    <h2>Account Holder Name: Beauty Queen</h2>
+    <p>Followers: <span id="countDisplay">0</span></p>
+    <hr>
+    <h2>Click button to follow</h2>
+    <button onclick="increaseCount()">Follow</button>
+    <button onclick="resetCount()">Reset Followers</button>
+    <script>
+
+        let count = 0
+
+//  uses increment method
+
+        function increaseCount() {
+            count++
+            displayCount()
+            checkCountValue()
+        }
+
+// alert popup on milestone
+
+        function checkCountValue() {
+            if (count === 10) {
+                alert("You have reached 10 followers")
+
+            }
+        }
+
+// displays the value of count and changes html element
+
+        function displayCount() {
+            document.getElementById("countDisplay").innerHTML = count
+        }
+
+// reset count
+
+        function resetCount() {
+            count = 0
+            displayCount()
+            popUp()
+
+        }
+
+//  popup on reset count
+
+        function popUp() {
+
+            alert("Follower count has been reset.")
+
+        }
+
+    </script>
+</body>
+
+</html>
